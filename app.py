@@ -143,7 +143,7 @@ def main():
             st.info(f"**模型类型**: TF-IDF文本相似度")
             st.info(f"**课程数量**: {len(course_teacher_tfidf):,}")
             st.info(f"**特征维度**: {tfidf_matrix.shape[1]}")
-            st.info(f"**停用词数量**: {len(open(r'd:/选课系统/stopwords.txt', 'r', encoding='gbk').readlines()):,}")
+            st.info(f"**停用词数量**: {len(open(r'stopwords.txt', 'r', encoding='gbk').readlines()):,}")
             
             st.markdown("---")
             st.header("🔄 当前进度")
