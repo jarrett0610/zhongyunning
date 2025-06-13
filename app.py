@@ -41,7 +41,7 @@ def init_session_state():
 # ---------------- 核心功能函数 ----------------
 def clean_text(text):
     """文本清洗函数（与预处理逻辑一致）"""
-    with open('stopwords.txt', 'r', encoding='gbk') as f:  # 原绝对路径改为 'data/stopwords.txt'
+    with open('/mount/src/zhongyunning/stopwords.txt', 'r', encoding='gbk') as f:  # 原绝对路径改为 'data/stopwords.txt'
         stopwords = [line.strip() for line in f.readlines()]
     text = re.sub(r'[^\u4e00-\u9fa5a-zA-Z\s]', '', str(text))
     text = text.lower()
