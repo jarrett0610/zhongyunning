@@ -19,8 +19,8 @@ def load_resources():
     """加载模型和数据资源（缓存优化）"""
     try:
         # 改为相对路径（假设模型和数据文件与app.py在同一项目根目录下的对应文件夹）
-        tfidf = joblib.load('model/tfidf_model.pkl')  # 原绝对路径改为 'model/tfidf_model.pkl'
-        course_teacher_tfidf = pd.read_pickle('data/course_teacher_tfidf.pkl')  # 原绝对路径改为 'data/course_teacher_tfidf.pkl'
+        tfidf = joblib.load('tfidf_model.pkl')  # 原绝对路径改为 'model/tfidf_model.pkl'
+        course_teacher_tfidf = pd.read_pickle('course_teacher_tfidf.pkl')  # 原绝对路径改为 'data/course_teacher_tfidf.pkl'
         tfidf_matrix = tfidf.transform(course_teacher_tfidf['cleaned_review'])
         
         st.success("✅ 模型与数据加载成功")
@@ -41,7 +41,7 @@ def init_session_state():
 # ---------------- 核心功能函数 ----------------
 def clean_text(text):
     """文本清洗函数（与预处理逻辑一致）"""
-    with open('data/stopwords.txt', 'r', encoding='gbk') as f:  # 原绝对路径改为 'data/stopwords.txt'
+    with open('stopwords.txt', 'r', encoding='gbk') as f:  # 原绝对路径改为 'data/stopwords.txt'
         stopwords = [line.strip() for line in f.readlines()]
     text = re.sub(r'[^\u4e00-\u9fa5a-zA-Z\s]', '', str(text))
     text = text.lower()
@@ -143,7 +143,7 @@ def main():
             st.info(f"**模型类型**: TF-IDF文本相似度")
             st.info(f"**课程数量**: {len(course_teacher_tfidf):,}")
             st.info(f"**特征维度**: {tfidf_matrix.shape[1]}")
-            st.info(f"**停用词数量**: {len(open(r'd:/选课系统/data/stopwords.txt', 'r', encoding='gbk').readlines()):,}")
+            st.info(f"**停用词数量**: {len(open(r'd:/选课系统/stopwords.txt', 'r', encoding='gbk').readlines()):,}")
             
             st.markdown("---")
             st.header("🔄 当前进度")
