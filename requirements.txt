@@ -1,0 +1,6 @@
+streamlit>=1.29.0   # Streamlit 核心库（最新稳定版）
+pandas>=2.0.0       # 数据处理库
+joblib>=1.3.2       # 模型加载库（与代码中 `joblib.load` 兼容）
+scikit-learn>=1.3.0 # 包含 `cosine_similarity` 的库
+jieba>=0.42.1       # 中文分词库
+re>=2.2.1           # 正则表达式库（通常无需指定，Python 内置）
