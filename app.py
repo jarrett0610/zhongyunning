@@ -86,7 +86,7 @@ def display_input_section(jokes_df):
     
     # 关键词输入（保留，仅移除冷启动上传部分）
     st.session_state.user_keywords = st.text_input(
-        "输入你的需求（如'数学 幽默 讲解清晰'）：",
+        "输入你的需求（如'幽默 讲解清晰'）：",
         key="user_keywords_input"
     )
     
